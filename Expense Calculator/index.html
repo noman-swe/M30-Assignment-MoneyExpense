@@ -41,18 +41,18 @@
                     <!--  -->
                     <div class="col-lg-6 ">
                         <h2 id="income-bang"></h2>
-                        
+
                         <h2 class="text-center pt-5 mb-3"> Income </h2>
                         <div class="d-flex justify-content-center">
                             <div class="input-group mb-3 w-50">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Income</span>
                                 </div>
-                                <input id="income-field" type="text" class="form-control" placeholder="Your Total Income"
-                                    aria-label="income" aria-describedby="basic-addon1">
-                                </div>
+                                <input id="income-field" type="text" class="form-control"
+                                    placeholder="Your Total Income" aria-label="income" aria-describedby="basic-addon1">
                             </div>
-                            <span class="" id="income-error"></span>
+                        </div>
+                        <span class="" id="income-error"></span>
 
                         <!-- Expense -->
                         <div class="expense">
@@ -62,8 +62,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Food</span>
                                     </div>
-                                    <input id="food-field" type="text" class="form-control" placeholder="Your Food Expense"
-                                        aria-label="Food Expense" aria-describedby="basic-addon1">
+                                    <input id="food-field" type="text" class="form-control"
+                                        placeholder="Your Food Expense" aria-label="Food Expense"
+                                        aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <span class="mr-auto" id="food-error"></span>
@@ -73,8 +74,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Rent</span>
                                     </div>
-                                    <input id="rent-field" type="text" class="form-control" placeholder="Your Rent Expense"
-                                        aria-label="income" aria-describedby="basic-addon1">
+                                    <input id="rent-field" type="text" class="form-control"
+                                        placeholder="Your Rent Expense" aria-label="income"
+                                        aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <span class="mr-auto" id="rent-error"></span>
@@ -84,8 +86,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1">Clothes</span>
                                     </div>
-                                    <input id="clothes-field" type="text" class="form-control" placeholder="Your Clothes Expense"
-                                        aria-label="income" aria-describedby="basic-addon1">
+                                    <input id="clothes-field" type="text" class="form-control"
+                                        placeholder="Your Clothes Expense" aria-label="income"
+                                        aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <span class="mr-auto" id="clothes-error"></span>
@@ -94,17 +97,20 @@
                         <div class="container">
                             <div class="row">
                                 <span class="d-flex justify-content-center mt-2">
-                                    <button type="button" id="cal-btn" class="btn btn-secondary btn-lg">Calculate</button>
+                                    <button type="button" id="cal-btn"
+                                        class="btn btn-secondary btn-lg">Calculate</button>
                                 </span>
                                 <span id="number-input-error"></span>
 
                                 <span class="d-flex justify-content-center">
                                     <div class="mt-3 grp">
                                         <div class="input-group mb-3">
-                                            <h3 class="text-center pt-3"> Total Expense: <span>1212</span> </h3>
+                                            <h3 class="text-center pt-3"> Total Expense: <span
+                                                    id="total-expense">00</span> </h3>
                                         </div>
                                         <div class="input-group">
-                                            <h3 class="text-center"> Exists Balance: <span>1212</span> </h3>
+                                            <h3 class="text-center"> Existing Balance: <span
+                                                    id="existing-balance">00</span> </h3>
                                         </div>
                                     </div>
                                 </span>
@@ -124,8 +130,8 @@
                                     </div>
                                 </div>
                                 <div class="text-center mt-3 mb-5">
-                                    <h5 class="mb-3">Saving Amount: <span id="saving-amount"> 00 </span></h5>
-                                    <h5>Remaining Balance:<span id="remaining-amount"> 00 </span></h5>
+                                    <h5 class="mb-3">Saving Amount: <span id="saving-amount">00</span></h5>
+                                    <h5>Remaining Balance: <span id="remaining-amount"> 00 </span></h5>
                                 </div>
                             </div>
                             <!-- saving-section-end -->
@@ -137,8 +143,8 @@
         </section>
     </main>
 
-    <!-- <script src="js/app.js"></script> -->
-    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>
