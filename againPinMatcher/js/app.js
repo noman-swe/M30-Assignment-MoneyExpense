@@ -1,57 +1,53 @@
 function getPin() {
     const pin = Math.round(Math.random() * 10000);
     const pinString = pin + '';
-    // console.log(pin);
     if (pinString.length == 4) {
         return pin;
-    } else {
+    }
+    else {
         return getPin();
     }
 }
 
-// 
-function generatedPin() {
-    const pin = getPin();
+// set random pin value in the display field
+function generatePin(pin) {
     document.getElementById('displayPin-field').value = pin;
 }
 
-// generate-btn
-document.getElementById('generate-btn').addEventListener('click', function () {
-    generatedPin();
+document.getElementById('generate-btn').addEventListener('click', () => {
+    const pin = getPin();
+    generatePin(pin);
 });
 
-// keypad
+// get keypad value
 document.getElementById('keypad').addEventListener('click', function (event) {
-    const typedValue = event.target.innerText;
+    // get typed pin
+    const typedNum = (event.target.innerText);
     const typedField = document.getElementById('display-typedNum');
-    // typedField.value = typedValue;
-
-    if (isNaN(typedValue)) {
-        // console.log('String');
-        if (typedValue == 'C') {
+    if (isNaN(typedNum)) {
+        if (typedNum == 'C') {
             typedField.value = '';
         }
-    }
-    else {
+    } else {
         const previousNumber = typedField.value;
-        const newNumber = previousNumber + typedValue;
-        typedField.value = newNumber;
+        typedField.value = (previousNumber + typedNum);
     }
-
 });
 
-// 
+// compare between random pin & typed pin
 document.getElementById('submit-btn').addEventListener('click', () => {
+    const typedPin = document.getElementById('display-typedNum').value;
     const generatedPin = document.getElementById('displayPin-field').value;
-    const typedFieldValue = document.getElementById('display-typedNum').value;
 
-    const failed = document.getElementById('notify-failed');
     const success = document.getElementById('notify-success');
-    if (generatedPin == typedFieldValue) {
-        failed.style.display = 'none';
+    const failed = document.getElementById('notify-failed');
+
+    if (typedPin == generatedPin) {
         success.style.display = 'block';
+        failed.style.display = 'none';
     } else {
         failed.style.display = 'block';
         success.style.display = 'none';
     }
-});
+
+}); 
