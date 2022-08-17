@@ -43,8 +43,12 @@ function checkInputValue(inputIdPart) {
     const nullEntry = nullEntryMsg(inputIdPart);
     const errorId = document.getElementById(inputIdPart + '-error');
     //check value
-    if (inputValue == null || isNaN(inputValue)) {
+    if ( isNaN(inputValue)) {
         return (nullEntry);
+    }
+    else if(inputValue == null){
+        return (nullEntry);
+
     }
     else {
         errorId.style.display = 'none';
@@ -89,6 +93,9 @@ document.getElementById('cal-btn').addEventListener('click', () => {
     const incomeInputValue = checkInputValue('income');
 
     const totalExpense = expenses();
+    if(isNaN(totalExpense)){
+        totalExpense = 0;
+    }
     //  set total expense to total Expense section
     document.getElementById('total-expense').innerText = totalExpense;
 
