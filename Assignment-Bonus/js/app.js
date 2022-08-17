@@ -8,7 +8,8 @@ function getInputValue(inputIdPart) {
 }
 
 // update Value
-function getUpdateValue(inputIdPart, inputValue) {
+function getUpdateValue(inputIdPart) {
+    const inputValue = getInputValue(inputIdPart);
     // total-tag
     const totalFieldText = document.getElementById(inputIdPart + '-total');
     const prevuousTotalValue = parseFloat(totalFieldText.innerText);
@@ -21,39 +22,27 @@ function getUpdateValue(inputIdPart, inputValue) {
 }
 
 // 
-function getUpdateBalance(inputValue, checkDepositOrWithdraw) {
+function getUpdateBalance() {
     const balanceField = document.getElementById('balance-total');
     const previousBalanceValue = parseFloat(balanceField.innerText);
-    // console.log(previousBalanceValue);
-    if (checkDepositOrWithdraw == true) {
-        const totalBalance = previousBalanceValue + inputValue;
-        balanceField.innerText = totalBalance;
-    }
-    else {
-        const totalBalance = previousBalanceValue - inputValue;
-        balanceField.innerText = totalBalance;
-    }
-    // console.log(totalBalance);
-
+    console.log(previousBalanceValue);
+    const totalBalance = previousBalanceValue + inputValue;
+    balanceField.innerText = totalBalance;
+    return totalBalance;
 }
 
 document.getElementById('deposit-btn').addEventListener('click', () => {
-    const depositInputValue = getInputValue('deposit');
+    const totalValue = getUpdateValue('deposit');
+    const inputValue = getInputValue('deposit');
+    const totalBalance = getUpdateBalance(inputValue);
 
-    if (!isNaN(depositInputValue)) {
-        getUpdateValue('deposit', depositInputValue);
-        getUpdateBalance(depositInputValue, true);
-    }
+    console.log(inputValue);
 });
 
 // 
 document.getElementById('withdraw-btn').addEventListener('click', () => {
-    const withdrawInputValue = getInputValue('withdraw');
-
-    if (withdrawInputValue > 0 && !isNaN(withdrawInputValue)) {
-        getUpdateValue('withdraw', withdrawInputValue);
-        getUpdateBalance(withdrawInputValue, false);
-    }
-
+    const totalValue = getUpdateValue('withdraw');
+    const inputValue = getInputValue('withdraw');
+    console.log(totalValue);
 
 })

@@ -1,0 +1,4 @@
+1. responsive for desktop and mobile phone(name/pic/calculate section)
+
+============================*_Notes_*=============================
+#function() er perameter first e check kora uchit j kono problem hoile
